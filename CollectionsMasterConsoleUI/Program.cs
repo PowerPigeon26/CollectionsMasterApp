@@ -9,53 +9,35 @@ namespace CollectionsMasterConsoleUI
     {
         static void Main(string[] args)
         {
-            //TODO: Follow the steps provided in the comments under each region.
-            //Make the console formatted to display each section well
-            //Utlilize the method stubs at the bottom for the methods you must create ⬇⬇⬇
-
             #region Arrays
-            //TODO: Create an integer Array of size 50
             int[] intArray = new int[50];
 
-            //TODO: Create a method to populate the number array with 50 random numbers that are between 0 and 50
             Populater(intArray, 0, 50);
 
-            //TODO: Print the first number of the array
             Console.WriteLine("First num of array.");
             Console.WriteLine(intArray[0]);
 
-            //TODO: Print the last number of the array
             Console.WriteLine("Last num of array.");
             Console.WriteLine(intArray[intArray.Length -1]);
 
             Console.WriteLine("All Numbers Original");
-            //UNCOMMENT this method to print out your numbers from arrays or lists
             NumberPrinter(intArray);
             Console.WriteLine("-------------------");
-
-            //TODO: Reverse the contents of the array and then print the array out to the console.
-            //Try for 2 different ways
-            /*  1) First way, using a custom method => Hint: Array._____(); 
-                2) Second way, Create a custom method (scroll to bottom of page to find ⬇⬇⬇)
-            */
 
             Console.WriteLine("All Numbers Reversed:");
-            NumberPrinter(intArray.Reverse());   //does NOT change intArray
+            NumberPrinter(intArray.Reverse());
             Console.WriteLine("---------REVERSE CUSTOM------------");
-            ReverseArray(intArray);   //actually reverses intArray
+            ReverseArray(intArray);
             NumberPrinter(intArray);
             Console.WriteLine("-------------------");
 
-            //TODO: Create a method that will set numbers that are a multiple of 3 to zero then print to the console all numbers
             Console.WriteLine("Multiple of three = 0: ");
-            ThreeKiller(intArray); //does NOT actually change given array, just prints expected output
+            ThreeKiller(intArray);
             
 
             Console.WriteLine("-------------------");
-            //TODO: Sort the array in order now
-            /*      Hint: Array.____()      */
             Console.WriteLine("Sorted numbers:");
-            Array.Sort(intArray);  //seems to actually change the array, neato
+            Array.Sort(intArray);
             NumberPrinter(intArray);
 
             Console.WriteLine("\n************End Arrays*************** \n");
@@ -64,23 +46,16 @@ namespace CollectionsMasterConsoleUI
             #region Lists
             Console.WriteLine("************Start Lists**************");
 
-            /*   Set Up   */
-            //TODO: Create an integer List
             List<int> intList = new List<int>();
 
-            //TODO: Print the capacity of the list to the console
             Console.WriteLine($"Capacity: " + Convert.ToString(intList.Capacity));
-
-            //TODO: Populate the List with 50 random numbers between 0 and 50 you will need a method for this            
+          
             Populater(intList, 50, 0, 50);
-            //NumberPrinter(intList); //did this early for testing purposes
-            //TODO: Print the new capacity
+
             Console.WriteLine($"Capacity: " + Convert.ToString(intList.Capacity));
             
             Console.WriteLine("---------------------");
 
-            //TODO: Create a method that prints if a user number is present in the list
-            //Remember: What if the user types "abc" accident your app should handle that!
             Console.WriteLine("What number will you search for in the number list?");
             int userInput;
             while (int.TryParse(Console.ReadLine(), out userInput) == false)
@@ -96,23 +71,18 @@ namespace CollectionsMasterConsoleUI
             NumberPrinter(intList);
             Console.WriteLine("-------------------");
 
-
-            //TODO: Create a method that will remove all odd numbers from the list then print results
             Console.WriteLine("Evens Only!!");
             OddKiller(intList);
             NumberPrinter(intList);
             Console.WriteLine("------------------");
 
-            //TODO: Sort the list then print results
             Console.WriteLine("Sorted Evens!!");
             intList.Sort();
             NumberPrinter(intList);
             Console.WriteLine("------------------");
 
-            //TODO: Convert the list to an array and store that into a variable
             int[] superCoolArray = intList.ToArray();
 
-            //TODO: Clear the list
             intList.Clear();
 
             #endregion
@@ -197,7 +167,6 @@ namespace CollectionsMasterConsoleUI
         /// <param name="collection"></param>
         private static void NumberPrinter<T>(T collection) where T : IEnumerable<int>
         {
-            //STAY OUT DO NOT MODIFY!!
             foreach (var item in collection)
             {
                 Console.WriteLine(item);
